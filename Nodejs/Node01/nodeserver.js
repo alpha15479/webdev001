@@ -1,8 +1,16 @@
 const http = require('http');
 http
     .createServer((req, res) => {
-        console.log('request มาอีกแล้ว')
-        res.write('สวัสดีจาก node web server');
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        res.write(`<html>
+        <head>
+        </head>
+        <body>
+            <h1>Yeahhh</h1>
+            <span> testing </span>
+        </body>
+        </html>
+        `);
         res.end();
     })
     .listen(80);
